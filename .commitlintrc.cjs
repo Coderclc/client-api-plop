@@ -1,27 +1,11 @@
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
-
-const scopes = fs
-  .readdirSync(path.resolve(__dirname), { withFileTypes: true })
-  .filter((dirent) => dirent.isDirectory())
-  .map((dirent) => dirent.name.replace(/s$/, ''));
-
-// precomputed scope
-const scopeComplete = execSync('git status --porcelain || true')
-  .toString()
-  .trim()
-  .split('\n')
-  .find((r) => ~r.indexOf('M  src'))
-  ?.replace(/(\/)/g, '%%')
-  ?.match(/src%%((\w|-)*)/)?.[1]
-  ?.replace(/s$/, '');
-
 /** @type {import('cz-git').UserConfig} */
 module.exports = {
   ignores: [(commit) => commit.includes('init')],
   extends: ['@commitlint/config-conventional'],
   rules: {
+    'scope-case': [0],
+    'scope-empty': [0],
+    'scope-min-length': [0],
     'body-leading-blank': [2, 'always'],
     'footer-leading-blank': [1, 'always'],
     'header-max-length': [2, 'always', 108],
@@ -59,9 +43,6 @@ module.exports = {
       b: 'build: bump dependencies',
       c: 'chore: update config',
     },
-    customScopesAlign: false,
-    defaultScope: false,
-    scopes: false,
     allowEmptyIssuePrefixs: false,
     allowCustomIssuePrefixs: false,
 
@@ -71,6 +52,7 @@ module.exports = {
       { value: 'workflow', name: 'workflow: workflow improvements' },
       { value: 'types', name: 'types:    type definition file changes' },
     ],
+
     // 中英文对照版
     messages: {
       type: '选择你要提交的类型 :',
@@ -92,16 +74,10 @@ module.exports = {
       { value: 'refactor', name: 'refactor: 代码重构' },
       { value: 'perf', name: 'perf:     性能优化' },
       { value: 'test', name: 'test:     添加疏漏测试或已有测试改动' },
-      {
-        value: 'build',
-        name: 'build:    构建流程、外部依赖变更 (如升级 npm 包、修改打包配置等)',
-      },
+      { value: 'build', name: 'build:    构建流程、外部依赖变更 (如升级 npm 包、修改打包配置等)' },
       { value: 'ci', name: 'ci:       修改 CI 配置、脚本' },
       { value: 'revert', name: 'revert:   回滚 commit' },
-      {
-        value: 'chore',
-        name: 'chore:    对构建过程或辅助工具和库的更改 (不影响源文件、测试用例)',
-      },
+      { value: 'chore', name: 'chore:    对构建过程或辅助工具和库的更改 (不影响源文件、测试用例)' },
       { value: 'wip', name: 'wip:      正在开发中' },
       { value: 'workflow', name: 'workflow: 工作流程改进' },
       { value: 'types', name: 'types:    类型定义文件修改' },
