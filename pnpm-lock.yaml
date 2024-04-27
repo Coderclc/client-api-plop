@@ -102,8 +102,8 @@ importers:
   packages/example:
     dependencies:
       client-api-plop:
-        specifier: ^1.6.0
-        version: 1.6.0(eslint@8.57.0)(plop@4.0.1)
+        specifier: ^1.7.0
+        version: 1.7.0(plop@4.0.1)
 
 packages:
 
@@ -1368,11 +1368,10 @@ packages:
     resolution: {integrity: sha512-ouuZd4/dm2Sw5Gmqy6bGyNNNe1qt9RpmxveLSO7KcgsTnU7RXfsw+/bukWGo1abgBiMAic068rclZsO4IWmmxQ==}
     engines: {node: '>= 12'}
 
-  client-api-plop@1.6.0:
-    resolution: {integrity: sha512-v5GAD12srraQVxRX9137wqdhGFtq8uH7iDZvu1Otn4pRyP4qU/DLPgVh6X7kDj4F0iA9B6yVWrkIpDb5B/MdXw==}
+  client-api-plop@1.7.0:
+    resolution: {integrity: sha512-S9E9qRpA98u0Xi5lF+tRKd3Yp9IyXlyz3KvlCPvgKtKbdZCBFn/pRlKRp5LvkXdQJVt0lFjrsQlH3hKRoj2jzg==}
     engines: {node: '>=18'}
     peerDependencies:
-      eslint: ^8.19.0
       plop: ^4.0.1
 
   cliui@7.0.4:
@@ -6068,11 +6067,9 @@ snapshots:
 
   cli-width@4.1.0: {}
 
-  client-api-plop@1.6.0(eslint@8.57.0)(plop@4.0.1):
+  client-api-plop@1.7.0(plop@4.0.1):
     dependencies:
-      eslint: 8.57.0
       plop: 4.0.1
-      tslib: 2.6.2
 
   cliui@7.0.4:
     dependencies:

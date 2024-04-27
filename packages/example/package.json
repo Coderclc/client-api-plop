@@ -5,11 +5,12 @@
   "description": "Use ESLint to format generated code with plop.js",
   "license": "MIT",
   "author": "zone",
+  "type": "module",
   "scripts": {
-    "test": "rimraf lib && plop Template \"Test\""
+    "test": "plop"
   },
   "dependencies": {
-    "client-api-plop": "^1.6.0"
+    "client-api-plop": "^1.7.0"
   },
   "engines": {
     "node": ">=18"
