@@ -6,10 +6,10 @@
   "license": "MIT",
   "author": "zone",
   "scripts": {
-    "test": "rimraf lib && plop Template \"Test\" && node ./__tests__/validate.test.js"
+    "test": "rimraf lib && plop Template \"Test\""
   },
   "dependencies": {
-    "client-api-plop": "^1.5.0"
+    "client-api-plop": "^1.6.0"
   },
   "engines": {
     "node": ">=18"

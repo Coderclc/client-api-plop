@@ -28,11 +28,7 @@
   "scripts": {
     "build": "rimraf lib && tsc --noEmit false --outDir lib"
   },
-  "dependencies": {
-    "tslib": "^2.6.2"
-  },
   "peerDependencies": {
-    "eslint": "^8.19.0",
     "plop": "^4.0.1"
   },
   "engines": {
