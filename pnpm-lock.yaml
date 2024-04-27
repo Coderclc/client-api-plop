@@ -98,13 +98,12 @@ importers:
       eslint:
         specifier: ^8.19.0
         version: 8.57.0
-      tslib:
-        specifier: ^2.6.2
-        version: 2.6.2
-    devDependencies:
       plop:
         specifier: ^4.0.1
         version: 4.0.1
+      tslib:
+        specifier: ^2.6.2
+        version: 2.6.2
 
   packages/example:
     dependencies:
