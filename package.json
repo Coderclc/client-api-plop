@@ -1,11 +1,7 @@
 {
-  "name": "plop-action-eslint",
-  "description": "Use ESLint to format generated code with plop.js",
+  "name": "client-api-plop",
   "private": true,
-  "author": {
-    "name": "Stefan Natter",
-    "url": "https://natterstefan.me"
-  },
+  "author": "zone",
   "license": "MIT",
   "engines": {
     "node": ">=18"
