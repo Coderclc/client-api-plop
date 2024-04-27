@@ -11,19 +11,8 @@
     "plop",
     "prettier"
   ],
-  "homepage": "https://github.com/natterstefan/plop-eslint#readme",
-  "bugs": {
-    "url": "https://github.com/natterstefan/plop-eslint/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/natterstefan/plop-eslint"
-  },
   "license": "MIT",
-  "author": {
-    "name": "Stefan Natter",
-    "url": "https://natterstefan.me"
-  },
+  "author": "zone",
   "type": "module",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -44,7 +33,7 @@
   },
   "peerDependencies": {
     "eslint": "^8.19.0",
-    "plop": "^3.1.2"
+    "plop": "^4.0.1"
   },
   "engines": {
     "node": ">=18"
