@@ -93,20 +93,11 @@ importers:
         specifier: ^20.12.7
         version: 20.12.7
 
-  packages/client-api-plop:
-    dependencies:
-      plop:
-        specifier: ^4.0.1
-        version: 4.0.1
-      tslib:
-        specifier: ^2.6.2
-        version: 2.6.2
-
   packages/example:
     dependencies:
       client-api-plop:
-        specifier: ^1.0.0
-        version: 1.1.0(plop@4.0.1)
+        specifier: ^1.5.0
+        version: 1.5.0(plop@4.0.1)
 
 packages:
 
@@ -1371,8 +1362,8 @@ packages:
     resolution: {integrity: sha512-ouuZd4/dm2Sw5Gmqy6bGyNNNe1qt9RpmxveLSO7KcgsTnU7RXfsw+/bukWGo1abgBiMAic068rclZsO4IWmmxQ==}
     engines: {node: '>= 12'}
 
-  client-api-plop@1.1.0:
-    resolution: {integrity: sha512-6bFwVbvdIZINkmmNuEGwH3YXH/ob56HBs48ZbWvR0yGEJ0rxDHJD9AYlzpARwlOYhlcVdjUJvfaFxExndF9CTA==}
+  client-api-plop@1.5.0:
+    resolution: {integrity: sha512-1qsGgT3ccy1A8uaHD4oDWh4kg7tHelfebrP/LHmSuMJ7eMLTg2AxG2yB+fiF9JlxJnB2+47u4vzX3IvaUzTU7Q==}
     engines: {node: '>=18'}
     peerDependencies:
       plop: ^4.0.1
@@ -6070,7 +6061,7 @@ snapshots:
 
   cli-width@4.1.0: {}
 
-  client-api-plop@1.1.0(plop@4.0.1):
+  client-api-plop@1.5.0(plop@4.0.1):
     dependencies:
       plop: 4.0.1
       tslib: 2.6.2
