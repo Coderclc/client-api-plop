@@ -1,3 +1,11 @@
+# [1.0.0](https://github.com/Coderclc/client-api-plop/compare/v1.1.0...v1.0.0) (2024-04-27)
+
+### Features
+
+- update ([367d857](https://github.com/Coderclc/client-api-plop/commit/367d8574e574c93c8753eaafb2a5503f54e7b75b))
+- update ([0d948a7](https://github.com/Coderclc/client-api-plop/commit/0d948a7074ff6d12f42a432495b8dcb8dddfca0a))
+- update ([ce160b1](https://github.com/Coderclc/client-api-plop/commit/ce160b1ad5ba4ee6a149b97936d0b14ca24f8750))
+
 # (2024-04-27)
 
 ### Bug Fixes
