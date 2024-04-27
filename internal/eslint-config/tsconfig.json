@@ -1,5 +1,0 @@
-{
-  "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "@zone/ts-config/node.json",
-  "include": ["src"]
-}

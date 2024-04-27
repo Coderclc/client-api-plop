@@ -1,0 +1,52 @@
+{
+  "name": "plop-action-eslint",
+  "description": "Use ESLint to format generated code with plop.js",
+  "version": "1.0.0",
+  "author": {
+    "name": "Stefan Natter",
+    "url": "https://natterstefan.me"
+  },
+  "license": "MIT",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "rimraf lib && tsc --noEmit false --outDir lib"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "peerDependencies": {
+    "eslint": "^8.19.0",
+    "plop": "^3.1.2"
+  },
+  "dependencies": {
+    "tslib": "^2.6.2"
+  },
+  "keywords": [
+    "eslint",
+    "plop-action",
+    "plop-helper",
+    "plop-pack",
+    "plop.js",
+    "plop",
+    "prettier"
+  ],
+  "bugs": {
+    "url": "https://github.com/natterstefan/plop-eslint/issues"
+  },
+  "homepage": "https://github.com/natterstefan/plop-eslint#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/natterstefan/plop-eslint"
+  }
+}

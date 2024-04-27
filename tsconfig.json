@@ -1,23 +1,25 @@
 {
-  "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    "baseUrl": ".",
-    "declaration": false,
-    "paths": {
-      "@/*": ["src/*"],
-      "#/*": ["types/*"]
-    }
+    "target": "es5",
+    "module": "esnext",
+    "allowJs": false,
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": true,
+    "isolatedModules": true,
+    "moduleResolution": "node",
+    "noEmit": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "removeComments": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "strictNullChecks": true
   },
-  "include": [
-    "tests/**/*.ts",
-    "src/**/*.ts",
-    "src/**/*.d.ts",
-    "src/**/*.tsx",
-    "types/**/*.d.ts",
-    "types/**/*.ts",
-    "build/**/*.ts",
-    "build/**/*.d.ts",
-    "mock/**/*.ts"
-  ],
-  "exclude": ["node_modules", "tests/server/**/*.ts", "dist", "**/*.js"]
+  "exclude": ["lib", "node_modules"]
 }
