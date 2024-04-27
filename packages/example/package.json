@@ -1,16 +1,18 @@
 {
-  "name": "example-client-api-plop",
+  "name": "example-plop-action-eslint",
   "version": "0.1.0",
   "private": true,
   "description": "Use ESLint to format generated code with plop.js",
   "license": "MIT",
-  "author": "zone",
-  "type": "module",
+  "author": {
+    "name": "Stefan Natter",
+    "url": "https://natterstefan.me"
+  },
   "scripts": {
-    "test": "plop"
+    "test": "rimraf lib && plop Template \"Test\" && node ./__tests__/validate.test.js"
   },
   "dependencies": {
-    "client-api-plop": "1.8.0"
+    "plop-action-eslint": "^0.1.0"
   },
   "engines": {
     "node": ">=18"

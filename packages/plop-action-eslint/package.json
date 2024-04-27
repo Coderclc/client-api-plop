@@ -1,6 +1,6 @@
 {
-  "name": "client-api-plop",
-  "version": "1.9.0",
+  "name": "plop-action-eslint",
+  "version": "1.0.0",
   "description": "Use ESLint to format generated code with plop.js",
   "keywords": [
     "eslint",
@@ -11,8 +11,19 @@
     "plop",
     "prettier"
   ],
+  "homepage": "https://github.com/natterstefan/plop-eslint#readme",
+  "bugs": {
+    "url": "https://github.com/natterstefan/plop-eslint/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/natterstefan/plop-eslint"
+  },
   "license": "MIT",
-  "author": "zone",
+  "author": {
+    "name": "Stefan Natter",
+    "url": "https://natterstefan.me"
+  },
   "type": "module",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -28,7 +39,11 @@
   "scripts": {
     "build": "rimraf lib && tsc --noEmit false --outDir lib"
   },
+  "dependencies": {
+    "tslib": "^2.6.2"
+  },
   "peerDependencies": {
+    "eslint": "^8.19.0",
     "plop": "^4.0.1"
   },
   "engines": {
