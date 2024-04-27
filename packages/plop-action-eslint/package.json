@@ -1,6 +1,6 @@
 {
-  "name": "plop-action-eslinttttttt",
-  "version": "1.10.0",
+  "name": "zone-zone",
+  "version": "1.0.0",
   "description": "Use ESLint to format generated code with plop.js",
   "keywords": [
     "eslint",
@@ -11,8 +11,19 @@
     "plop",
     "prettier"
   ],
+  "homepage": "https://github.com/natterstefan/plop-eslint#readme",
+  "bugs": {
+    "url": "https://github.com/natterstefan/plop-eslint/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/natterstefan/plop-eslint"
+  },
   "license": "MIT",
-  "author": "zone",
+  "author": {
+    "name": "Stefan Natter",
+    "url": "https://natterstefan.me"
+  },
   "type": "module",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -37,6 +48,5 @@
   },
   "engines": {
     "node": ">=18"
-  },
-  "gitHead": "142fa52b47f5af8cafafc13dbc57c51c67ba0fc4"
+  }
 }

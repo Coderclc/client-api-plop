@@ -114,3 +114,5 @@ esm
 packages/*/CHANGELOG.md
 packages/*/LICENSE
 packages/*/README.md
+
+.DS_Store

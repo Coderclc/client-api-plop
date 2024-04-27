@@ -18,7 +18,7 @@ const eslintAction: CustomActionFunction = async (answers, config, plopInstance)
 
       await ESLint.outputFixes(results);
 
-      return 'Code formatted1231231';
+      return 'Code formatted';
     }
   } catch (_) {
     return 'Formatting failed';
