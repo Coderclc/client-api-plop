@@ -1,0 +1,29 @@
+{
+  "name": "client-api-plop",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "zone",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "bin": {
+    "plop": "./node_modules/plop/bin/plop.js"
+  },
+  "files": [
+    "lib",
+    "LICENSE"
+  ],
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "scripts": {
+    "build": "rimraf lib && tsc --noEmit false --outDir lib"
+  },
+  "peerDependencies": {
+    "plop": "^4.0.1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

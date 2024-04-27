@@ -2,7 +2,7 @@ module.exports = async (
   /** @type {import('plop').NodePlopAPI} */
   plop,
 ) => {
-  await plop.load('plop-action-eslint');
+  await plop.load('zone-zone');
 
   plop.setGenerator('Template', {
     description: 'Use Template',

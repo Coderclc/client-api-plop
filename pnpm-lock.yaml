@@ -93,23 +93,17 @@ importers:
         specifier: ^20.12.7
         version: 20.12.7
 
-  packages/example:
+  packages/client-api-plop:
     dependencies:
-      plop-action-eslint:
-        specifier: ^0.1.0
-        version: 0.1.0(eslint@8.57.0)(plop@4.0.1)
-
-  packages/plop-action-eslint:
-    dependencies:
-      eslint:
-        specifier: ^8.19.0
-        version: 8.57.0
       plop:
         specifier: ^4.0.1
         version: 4.0.1
-      tslib:
-        specifier: ^2.6.2
-        version: 2.6.2
+
+  packages/example:
+    dependencies:
+      zone-zone:
+        specifier: ^1.0.0
+        version: 1.0.0(eslint@8.57.0)(plop@4.0.1)
 
 packages:
 
@@ -3603,13 +3597,6 @@ packages:
   pkg-types@1.1.0:
     resolution: {integrity: sha512-/RpmvKdxKf8uILTtoOhAgf30wYbP2Qw+L9p3Rvshx1JZVX+XQNZQFjlbmGHEGIm4CkVPlSn+NXmIM8+9oWQaSA==}
 
-  plop-action-eslint@0.1.0:
-    resolution: {integrity: sha512-MeYV3ilWYwNVMyDoothVU1TxPgFw8LzQRz/sKTG2lbY4WsDsXMCypJk6tRI8mn/5RS3JTJQtLrEtqjM3JhMZcA==}
-    engines: {node: '>=14.0.0'}
-    peerDependencies:
-      eslint: ^8.10.0
-      plop: ^3.0.5
-
   plop@4.0.1:
     resolution: {integrity: sha512-5n8QU93kvL/ObOzBcPAB1siVFtAH1TZM6TntJ3JK5kXT0jIgnQV+j+uaOWWFJlg1cNkzLYm8klgASF65K36q9w==}
     engines: {node: '>=18'}
@@ -4702,6 +4689,13 @@ packages:
   yocto-queue@1.0.0:
     resolution: {integrity: sha512-9bnSc/HEW2uRy67wc+T8UwauLuPJVn28jb+GtJY16iiKWyvmYJRXVT4UamsAEGQfPohgr2q4Tq0sQbQlxTfi1g==}
     engines: {node: '>=12.20'}
+
+  zone-zone@1.0.0:
+    resolution: {integrity: sha512-7WY9tHViEId+XOL+pqe3uk3wEhD5Pm/UEEaSPxHm8l580I7kOvQW6sj/UrEo3vQ+LmQu9fGnV1rOIgnF6y1mgA==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      eslint: ^8.19.0
+      plop: ^4.0.1
 
 snapshots:
 
@@ -8721,12 +8715,6 @@ snapshots:
       mlly: 1.6.1
       pathe: 1.1.2
 
-  plop-action-eslint@0.1.0(eslint@8.57.0)(plop@4.0.1):
-    dependencies:
-      eslint: 8.57.0
-      plop: 4.0.1
-      tslib: 2.6.2
-
   plop@4.0.1:
     dependencies:
       '@types/liftoff': 4.0.3
@@ -9876,3 +9864,9 @@ snapshots:
   yocto-queue@0.1.0: {}
 
   yocto-queue@1.0.0: {}
+
+  zone-zone@1.0.0(eslint@8.57.0)(plop@4.0.1):
+    dependencies:
+      eslint: 8.57.0
+      plop: 4.0.1
+      tslib: 2.6.2

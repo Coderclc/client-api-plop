@@ -27,7 +27,7 @@ const eslintAction: CustomActionFunction = async (answers, config, plopInstance)
   return 'Formatting skipped';
 };
 
-export default (plop: NodePlopAPI) => {
+module.exports = (plop: NodePlopAPI) => {
   plop.setDefaultInclude({ actionTypes: true });
   plop.setActionType('eslint', eslintAction);
 };
