@@ -95,9 +95,6 @@ importers:
 
   packages/client-api-plop:
     dependencies:
-      eslint:
-        specifier: ^8.19.0
-        version: 8.57.0
       plop:
         specifier: ^4.0.1
         version: 4.0.1
