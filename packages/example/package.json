@@ -1,7 +1,6 @@
 {
   "name": "example-client-api-plop",
   "version": "1.1.0",
-  "private": true,
   "description": "Use ESLint to format generated code with plop.js",
   "license": "MIT",
   "author": "zone",
