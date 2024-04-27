@@ -102,8 +102,8 @@ importers:
   packages/example:
     dependencies:
       client-api-plop:
-        specifier: ^1.7.0
-        version: 1.7.0(plop@4.0.1)
+        specifier: 1.8.0
+        version: 1.8.0(plop@4.0.1)
 
 packages:
 
@@ -1368,8 +1368,8 @@ packages:
     resolution: {integrity: sha512-ouuZd4/dm2Sw5Gmqy6bGyNNNe1qt9RpmxveLSO7KcgsTnU7RXfsw+/bukWGo1abgBiMAic068rclZsO4IWmmxQ==}
     engines: {node: '>= 12'}
 
-  client-api-plop@1.7.0:
-    resolution: {integrity: sha512-S9E9qRpA98u0Xi5lF+tRKd3Yp9IyXlyz3KvlCPvgKtKbdZCBFn/pRlKRp5LvkXdQJVt0lFjrsQlH3hKRoj2jzg==}
+  client-api-plop@1.8.0:
+    resolution: {integrity: sha512-nPYyz6zK3ME74/6LQQaBtvUB6kiEMotxJeaOXXVh5HTjewiGwvYBY0douLMwwDAW+oyQ8yy/t2ZVpkyb5KLgjA==}
     engines: {node: '>=18'}
     peerDependencies:
       plop: ^4.0.1
@@ -6067,7 +6067,7 @@ snapshots:
 
   cli-width@4.1.0: {}
 
-  client-api-plop@1.7.0(plop@4.0.1):
+  client-api-plop@1.8.0(plop@4.0.1):
     dependencies:
       plop: 4.0.1
 

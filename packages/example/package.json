@@ -10,7 +10,7 @@
     "test": "plop"
   },
   "dependencies": {
-    "client-api-plop": "^1.7.0"
+    "client-api-plop": "1.8.0"
   },
   "engines": {
     "node": ">=18"

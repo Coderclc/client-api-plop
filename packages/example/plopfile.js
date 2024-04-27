@@ -1,5 +1,5 @@
 export default async (plop) => {
-  // await plop.load('client-api-plop');
+  await plop.load('client-api-plop');
 
   // plop.setGenerator('Template', {
   //   description: 'Use Template',

@@ -44,7 +44,7 @@ const useI18n = () => {
 
 export const i18n = useI18n();
 
-module.exports = (plop: NodePlopAPI) => {
+export default (plop: NodePlopAPI) => {
   plop.setGenerator('entry', {
     description: i18n.entryDescription,
     prompts: [
