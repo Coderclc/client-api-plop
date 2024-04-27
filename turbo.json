@@ -3,10 +3,16 @@
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["lib/**"]
+      "outputs": ["dist/**"]
     },
-    "test": {
-      "dependsOn": ["build"]
+    "stub": {},
+    "lint": {},
+    "clean": {
+      "cache": false
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
     }
   }
 }
