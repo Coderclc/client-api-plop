@@ -104,9 +104,9 @@ importers:
 
   packages/example:
     dependencies:
-      plop-action-eslint:
-        specifier: ^0.1.0
-        version: 0.1.0(eslint@8.57.0)(plop@4.0.1)
+      client-api-plop:
+        specifier: ^1.0.0
+        version: 1.0.0(plop@4.0.1)
 
 packages:
 
@@ -1374,6 +1374,12 @@ packages:
   cli-width@4.1.0:
     resolution: {integrity: sha512-ouuZd4/dm2Sw5Gmqy6bGyNNNe1qt9RpmxveLSO7KcgsTnU7RXfsw+/bukWGo1abgBiMAic068rclZsO4IWmmxQ==}
     engines: {node: '>= 12'}
+
+  client-api-plop@1.0.0:
+    resolution: {integrity: sha512-wpHQ6Rlk8TGljadEFaqk3nrmouPM6dV/GJTtUSulP/oox1M+ve8dNhOCpMglei9vWT78Uu4IxbpW19CW3M5dDQ==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      plop: ^4.0.1
 
   cliui@7.0.4:
     resolution: {integrity: sha512-OcRE68cOsVMXp1Yvonl/fzkQOyjLSu/8bhPDfQt0e0/Eb283TKP20Fs2MqoPsr9SwA595rRCA+QMzYc9nBP+JQ==}
@@ -3603,13 +3609,6 @@ packages:
 
   pkg-types@1.1.0:
     resolution: {integrity: sha512-/RpmvKdxKf8uILTtoOhAgf30wYbP2Qw+L9p3Rvshx1JZVX+XQNZQFjlbmGHEGIm4CkVPlSn+NXmIM8+9oWQaSA==}
-
-  plop-action-eslint@0.1.0:
-    resolution: {integrity: sha512-MeYV3ilWYwNVMyDoothVU1TxPgFw8LzQRz/sKTG2lbY4WsDsXMCypJk6tRI8mn/5RS3JTJQtLrEtqjM3JhMZcA==}
-    engines: {node: '>=14.0.0'}
-    peerDependencies:
-      eslint: ^8.10.0
-      plop: ^3.0.5
 
   plop@4.0.1:
     resolution: {integrity: sha512-5n8QU93kvL/ObOzBcPAB1siVFtAH1TZM6TntJ3JK5kXT0jIgnQV+j+uaOWWFJlg1cNkzLYm8klgASF65K36q9w==}
@@ -6074,6 +6073,11 @@ snapshots:
   cli-width@3.0.0: {}
 
   cli-width@4.1.0: {}
+
+  client-api-plop@1.0.0(plop@4.0.1):
+    dependencies:
+      plop: 4.0.1
+      tslib: 2.6.2
 
   cliui@7.0.4:
     dependencies:
@@ -8721,12 +8725,6 @@ snapshots:
       confbox: 0.1.7
       mlly: 1.6.1
       pathe: 1.1.2
-
-  plop-action-eslint@0.1.0(eslint@8.57.0)(plop@4.0.1):
-    dependencies:
-      eslint: 8.57.0
-      plop: 4.0.1
-      tslib: 2.6.2
 
   plop@4.0.1:
     dependencies:

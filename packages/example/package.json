@@ -9,7 +9,7 @@
     "test": "rimraf lib && plop Template \"Test\" && node ./__tests__/validate.test.js"
   },
   "dependencies": {
-    "client-api-plop": "^0.1.0"
+    "client-api-plop": "^1.0.0"
   },
   "engines": {
     "node": ">=18"

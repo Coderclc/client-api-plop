@@ -1,4 +1,5 @@
 dist
+lib
 .local
 .output.js
 node_modules
