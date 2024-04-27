@@ -19,7 +19,6 @@
     "**/.DS_Store": true,
     "**/.idea": true,
     "**/.vscode": false,
-    "**/yarn.lock": true,
     "**/tmp": true,
     "out": true,
     "dist": true,
@@ -28,8 +27,6 @@
     "examples": true,
     "res": true,
     "screenshots": true,
-    "yarn-error.log": true,
-    "**/.yarn": true
   },
   "files.exclude": {
     "**/.cache": true,
@@ -52,7 +49,6 @@
     "**/tmp/**": true,
     "**/bower_components/**": true,
     "**/dist/**": true,
-    "**/yarn.lock": true
   },
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
