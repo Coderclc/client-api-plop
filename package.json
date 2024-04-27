@@ -1,5 +1,5 @@
 {
-  "name": "zone",
+  "name": "client-api-plop",
   "version": "1.0.0",
   "license": "MIT",
   "author": "zone",
@@ -17,7 +17,7 @@
     "lint:prettier": "prettier --write .",
     "log": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "prepare": "husky install",
-    "reinstall": "rimraf pnpm-lock.yaml && rimraf package.lock.json && rimraf node_modules && pnpm run bootstrap",
+    "reinstall": "rimraf pnpm-lock.yaml && rimraf package.lock.json && rimraf node_modules && pnpm bootstrap",
     "test": "turbo run test"
   },
   "lint-staged": {
@@ -30,10 +30,6 @@
     ],
     "package.json": [
       "prettier --write"
-    ],
-    "*.{scss,less,styl,html}": [
-      "prettier --write",
-      "stylelint --fix"
     ],
     "*.md": [
       "prettier --write"

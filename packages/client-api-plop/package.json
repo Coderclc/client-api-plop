@@ -20,6 +20,9 @@
   "scripts": {
     "build": "rimraf lib && tsc --noEmit false --outDir lib"
   },
+  "devDependencies": {
+    "cross-spawn": "^7.0.3"
+  },
   "peerDependencies": {
     "plop": "^4.0.1"
   },

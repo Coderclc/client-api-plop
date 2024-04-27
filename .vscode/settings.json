@@ -60,21 +60,11 @@
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[less]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[scss]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit",
-    "source.fixAll.stylelint": "explicit"
   },
   "cSpell.words": [
     "antd",
@@ -97,10 +87,7 @@
     "qrcode",
     "sider",
     "sortablejs",
-    "stylelint",
-    "tailwindcss",
     "tinymce",
-    "unocss",
     "unref",
     "vditor",
     "zxcvbn"
@@ -135,7 +122,7 @@
     "*.env": "$(capture).env.*",
     "CHANGELOG.md": "CHANGELOG*",
     "package.json": "pnpm-lock.yaml,pnpm-workspace.yaml,LICENSE,.gitattributes,.gitignore,.gitpod.yml,CNAME,README*,.npmrc,.browserslistrc",
-    ".eslintrc.cjs": ".eslintignore,.prettierignore,.stylelintignore,.commitlintrc.*,.prettierrc.*,.stylelintrc.*"
+    ".eslintrc.cjs": ".eslintignore,.prettierignore,.commitlintrc.*,.prettierrc.*"
   },
   "terminal.integrated.scrollback": 10000,
   "nuxt.isNuxtApp": false,

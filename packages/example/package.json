@@ -4,16 +4,9 @@
   "private": true,
   "description": "Use ESLint to format generated code with plop.js",
   "license": "MIT",
-  "author": {
-    "name": "Stefan Natter",
-    "url": "https://natterstefan.me"
-  },
+  "author": "zone",
   "scripts": {
-    "plop": "plop",
-    "test": "rimraf lib && plop Template \"Test\" && node ./__tests__/validate.test.js"
-  },
-  "dependencies": {
-    "zone-zone": "^1.0.0"
+    "plop": "plop"
   },
   "engines": {
     "node": ">=18"

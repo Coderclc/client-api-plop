@@ -98,12 +98,12 @@ importers:
       plop:
         specifier: ^4.0.1
         version: 4.0.1
+    devDependencies:
+      cross-spawn:
+        specifier: ^7.0.3
+        version: 7.0.3
 
-  packages/example:
-    dependencies:
-      zone-zone:
-        specifier: ^1.0.0
-        version: 1.0.0(eslint@8.57.0)(plop@4.0.1)
+  packages/example: {}
 
 packages:
 
@@ -4689,13 +4689,6 @@ packages:
   yocto-queue@1.0.0:
     resolution: {integrity: sha512-9bnSc/HEW2uRy67wc+T8UwauLuPJVn28jb+GtJY16iiKWyvmYJRXVT4UamsAEGQfPohgr2q4Tq0sQbQlxTfi1g==}
     engines: {node: '>=12.20'}
-
-  zone-zone@1.0.0:
-    resolution: {integrity: sha512-7WY9tHViEId+XOL+pqe3uk3wEhD5Pm/UEEaSPxHm8l580I7kOvQW6sj/UrEo3vQ+LmQu9fGnV1rOIgnF6y1mgA==}
-    engines: {node: '>=18'}
-    peerDependencies:
-      eslint: ^8.19.0
-      plop: ^4.0.1
 
 snapshots:
 
@@ -9864,9 +9857,3 @@ snapshots:
   yocto-queue@0.1.0: {}
 
   yocto-queue@1.0.0: {}
-
-  zone-zone@1.0.0(eslint@8.57.0)(plop@4.0.1):
-    dependencies:
-      eslint: 8.57.0
-      plop: 4.0.1
-      tslib: 2.6.2

@@ -1,33 +1,21 @@
-import { ESLint } from 'eslint';
-import type { CustomActionFunction, NodePlopAPI } from 'plop';
+import { customGenerator, customLibActionType, unlessLastHelper } from './custom/prompt';
+import { entryGenerator, entryLambdaActionType, entryLibActionType } from './entry/prompt';
+import { i18n } from './utils';
+import type { NodePlopAPI } from 'plop';
 
-/**
- * eslintAction - Action to run eslint on the given file (config.path)
- *
- * ## ESLint Docs
- * @link https://eslint.org/docs/developer-guide/nodejs-api#eslint-class
- */
-const eslintAction: CustomActionFunction = async (answers, config, plopInstance) => {
-  try {
-    if (config && config.path && plopInstance) {
-      const stringsToRender = Array.isArray(config.path) ? config.path : [config.path];
-      const filePaths = stringsToRender.map((path) => plopInstance.renderString(path, answers));
+module.exports = (plop: NodePlopAPI, ...arg): void => {
+  console.log(arg);
 
-      const eslint = new ESLint({ fix: true });
-      const results = await eslint.lintFiles(filePaths);
+  plop.setWelcomeMessage(i18n.welcome);
 
-      await ESLint.outputFixes(results);
+  // entry
+  plop.setGenerator('entry', entryGenerator);
+  plop.setActionType('entryLambda', entryLambdaActionType);
+  plop.setActionType('entryLib', entryLibActionType);
 
-      return 'Code formatted123123';
-    }
-  } catch (_) {
-    return 'Formatting failed';
-  }
+  // custom
+  plop.setGenerator('custom', customGenerator);
+  plop.setActionType('customLib', customLibActionType);
 
-  return 'Formatting skipped';
-};
-
-module.exports = (plop: NodePlopAPI) => {
-  plop.setDefaultInclude({ actionTypes: true });
-  plop.setActionType('eslint', eslintAction);
+  plop.setHelper('unlessLast', unlessLastHelper);
 };
