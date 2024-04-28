@@ -2,6 +2,7 @@
 // import { DOMAIN } from '@/fetch';
 import { notEmpty, isValid, customAction, i18n, getPath } from '../utils';
 import type { PlopGeneratorConfig, CustomActionFunction } from 'plop';
+import path from 'path';
 
 export const entryGenerator: PlopGeneratorConfig = {
   description: i18n.entryDescription,
@@ -47,26 +48,26 @@ export const entryGenerator: PlopGeneratorConfig = {
     //   choices: Object.keys(DOMAIN),
     // },
   ],
-  actions: () => {
+  actions: (data) => {
     const apiName = '{{camelCase apiName}}';
     // const { module } = data!;
 
     return [
-      // {
-      //   type: 'add',
-      //   path: getPath(`api/api/${apiName}.ts`),
-      //   templateFile: './entry/api.hbs',
-      //   data: {
-      //     ...data,
-      //     domain: 123,
-      //     method: 345,
-      //   },
-      // },
       {
-        type: 'append',
-        path: getPath('api/api/index.ts'),
-        template: `export * from './${apiName}';`,
+        type: 'add',
+        path: getPath(`api/api/${apiName}.ts`),
+        templateFile: path.resolve(__dirname, './api.hbs'),
+        data: {
+          ...data,
+          domain: 123,
+          method: 345,
+        },
       },
+      // {
+      //   type: 'append',
+      //   path: getPath('api/api/index.ts'),
+      //   template: `export * from './${apiName}';`,
+      // },
       // {
       //   type: 'entryLambda',
       //   path: getPath(`api/lambda/${module}/entry.ts`),
