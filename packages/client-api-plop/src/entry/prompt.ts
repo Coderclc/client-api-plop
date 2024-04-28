@@ -1,6 +1,6 @@
 // import { Method } from 'lib/type';
 // import { DOMAIN } from '@/fetch';
-import { notEmpty, getPath, isValid, customAction, i18n } from '../utils';
+import { notEmpty, isValid, customAction, i18n, getPath } from '../utils';
 import type { PlopGeneratorConfig, CustomActionFunction } from 'plop';
 
 export const entryGenerator: PlopGeneratorConfig = {
@@ -47,30 +47,34 @@ export const entryGenerator: PlopGeneratorConfig = {
     //   choices: Object.keys(DOMAIN),
     // },
   ],
-  actions: (data) => {
+  actions: () => {
     const apiName = '{{camelCase apiName}}';
-    const { module } = data!;
+    // const { module } = data!;
 
     return [
-      {
-        type: 'add',
-        path: getPath(`api/api/${apiName}.ts`),
-        templateFile: 'entry/api.hbs',
-        data,
-      },
+      // {
+      //   type: 'add',
+      //   path: getPath(`api/api/${apiName}.ts`),
+      //   templateFile: './entry/api.hbs',
+      //   data: {
+      //     ...data,
+      //     domain: 123,
+      //     method: 345,
+      //   },
+      // },
       {
         type: 'append',
         path: getPath('api/api/index.ts'),
         template: `export * from './${apiName}';`,
       },
-      {
-        type: 'entryLambda',
-        path: getPath(`api/lambda/${module}/entry.ts`),
-      },
-      {
-        type: 'entryLib',
-        path: getPath(`lib/${module}/entry.ts`),
-      },
+      // {
+      //   type: 'entryLambda',
+      //   path: getPath(`api/lambda/${module}/entry.ts`),
+      // },
+      // {
+      //   type: 'entryLib',
+      //   path: getPath(`lib/${module}/entry.ts`),
+      // },
     ];
   },
 };

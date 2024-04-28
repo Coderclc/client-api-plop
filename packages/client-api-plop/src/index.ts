@@ -3,8 +3,10 @@ import { entryGenerator, entryLambdaActionType, entryLibActionType } from './ent
 import { i18n } from './utils';
 import type { NodePlopAPI } from 'plop';
 
-module.exports = (plop: NodePlopAPI, ...arg): void => {
-  console.log(arg);
+export default (plop: NodePlopAPI, ...arg: any): void => {
+  console.log(arg, 456);
+  console.log(plop.getDestBasePath());
+  console.log(plop.getDefaultInclude());
 
   plop.setWelcomeMessage(i18n.welcome);
 
@@ -19,3 +21,5 @@ module.exports = (plop: NodePlopAPI, ...arg): void => {
 
   plop.setHelper('unlessLast', unlessLastHelper);
 };
+
+export type { NodePlopAPI } from 'plop';

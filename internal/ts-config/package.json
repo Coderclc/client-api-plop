@@ -5,11 +5,6 @@
   "license": "MIT",
   "type": "module",
   "files": [
-    "base.json",
-    "node.json",
-    "node-server.json"
-  ],
-  "dependencies": {
-    "@types/node": "^20.12.7"
-  }
+    "base.json"
+  ]
 }

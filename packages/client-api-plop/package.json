@@ -6,7 +6,8 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "bin": {
-    "plop": "./node_modules/plop/bin/plop.js"
+    "plop": "./node_modules/plop/bin/plop.js",
+    "tsx": "./node_modules/tsx/dist/loader.mjs"
   },
   "files": [
     "lib",
@@ -21,7 +22,9 @@
     "build": "rimraf lib && tsc --noEmit false --outDir lib"
   },
   "devDependencies": {
-    "cross-spawn": "^7.0.3"
+    "cross-spawn": "^7.0.3",
+    "tslib": "^2.6.2",
+    "tsx": "^4.7.3"
   },
   "peerDependencies": {
     "plop": "^4.0.1"

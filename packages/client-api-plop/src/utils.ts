@@ -1,7 +1,8 @@
 import type { CustomActionFunction } from 'plop';
 
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+
 const { spawn } = require('cross-spawn');
 
 type CustomActionFunctionParameters = Parameters<CustomActionFunction>;
@@ -52,15 +53,15 @@ export const customAction = (
   });
 };
 
-const useI18n = () => {
-  enum LangType {
-    ZH_CN,
-    EN,
-  }
-  interface LangConfig {
-    [key: string]: any;
-  }
+enum LangType {
+  ZH_CN,
+  EN,
+}
+interface LangConfig {
+  [key: string]: any;
+}
 
+const useI18n = () => {
   const locale = LangType.ZH_CN;
 
   const lang: Record<LangType, LangConfig> = {

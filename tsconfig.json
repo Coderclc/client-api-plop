@@ -1,8 +1,5 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "compilerOptions": {
-    "baseUrl": ".",
-    "declaration": false
-  },
-  "exclude": ["node_modules", "tests/server/**/*.ts", "dist", "**/*.js"]
+  "extends": "@zone/ts-config/base.json",
+  "exclude": ["node_modules","lib"]
 }
