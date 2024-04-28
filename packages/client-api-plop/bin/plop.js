@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+import { Plop, run } from 'plop';
+import minimist from 'minimist';
+
+const args = process.argv.slice(2);
+const argv = minimist(args);
+console.log(argv);
+
+Plop.prepare(
+  {
+    cwd: argv.cwd,
+    preload: argv.preload || [],
+    configPath: argv.plopfile,
+    completion: argv.completion,
+  },
+  function (env) {
+    Plop.execute(env, run);
+  },
+);

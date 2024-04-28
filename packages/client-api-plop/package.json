@@ -6,7 +6,7 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "bin": {
-    "plop": "./node_modules/plop/bin/plop.js",
+    "plop": "./bin/plop.js",
     "tsx": "./node_modules/tsx/dist/loader.mjs"
   },
   "files": [
