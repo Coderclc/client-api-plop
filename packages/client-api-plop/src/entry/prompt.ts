@@ -1,4 +1,5 @@
-import { notEmpty, isValid, customAction, i18n, getPath, getTemplateFile } from '../utils';
+import { notEmpty, isValid, customAction, getPath, getTemplateFile } from '../utils';
+import { i18n } from '../i18n';
 import type { PlopGeneratorConfig, CustomActionFunction, NodePlopAPI } from 'plop';
 
 export const getEntryGenerator = (plop: NodePlopAPI): PlopGeneratorConfig => {

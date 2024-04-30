@@ -1,4 +1,5 @@
-import { getPath, isValid, customAction, notEmpty, i18n, getTemplateFile } from '../utils';
+import { getPath, isValid, customAction, notEmpty, getTemplateFile } from '../utils';
+import { i18n } from '../i18n';
 import type { PlopGeneratorConfig, CustomActionFunction, NodePlopAPI } from 'plop';
 
 type HelperFunction = Parameters<NodePlopAPI['setHelper']>[1];
