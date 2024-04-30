@@ -1,0 +1,35 @@
+import { FetchFunc, Method } from '@lib/type';
+import { ApiOptions } from '@pakwoon/common-utils';
+import { ApiRes } from '@pakwoon/mysql-utils';
+{{#each integrationApiNameArr}}
+import type {
+  {{this}}Data,
+  {{this}}Res,
+} from '@/api/{{this}}';
+{{/each}}
+
+const {{ camelCase apiName }} = (fetch: FetchFunc) => ({
+  {{#each integrationApiNameArr}}
+  {{ this }}: (
+    data: {{ this }}Data,
+    options: ApiOptions = {},
+  ) =>
+    fetch<ApiRes<{{ this }}Res>, never, {{ this }}Data>(
+      '/api/{{ ../module }}/{{ camelCase ../apiName }}',
+      {
+        ...options,
+        method: Method.{{ ../method }},
+        data,
+      },
+    ),
+    {{/each}}
+});
+
+export default {{ camelCase apiName }};
+
+{{#each integrationApiNameArr}}
+export type {
+  {{this}}Data,
+  {{this}}Res,
+} from '@/api/{{this}}';
+{{/each}}

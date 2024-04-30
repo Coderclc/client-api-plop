@@ -1,0 +1,23 @@
+{
+  "npmClient": "pnpm",
+  "changelog": {
+    "ignoreCommitters": ["dependabot"],
+    "labels": {
+      "enhancement": ":rocket: New Feature",
+      "bug": ":bug: Bug Fix"
+    },
+    "nextVersion": "Unreleased"
+  },
+  "command": {
+    "version": {
+      "allowBranch": ["main", "next"]
+    },
+    "publish": {
+      "allowBranch": ["main", "next"],
+      "conventionalCommits": true,
+      "message": "chore(release): %s"
+    }
+  },
+  "ignoreChanges": ["*.md", "*.txt", "__test__/**", "**/__tests__/**"],
+  "version": "1.13.0"
+}

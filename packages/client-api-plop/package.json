@@ -1,0 +1,30 @@
+{
+  "name": "client-api-plop",
+  "version": "1.17.0",
+  "license": "MIT",
+  "author": "zone",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "bin": {
+    "plop": "./bin/plop.js"
+  },
+  "files": [
+    "lib",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "rimraf lib && tsc --noEmit false --outDir lib && pnpm fs-extra",
+    "fs-extra": "node scripts/fs-extra.js"
+  },
+  "devDependencies": {
+    "cross-spawn": "^7.0.3",
+    "fs-extra": "^11.2.0",
+    "minimist": "^1.2.8",
+    "tslib": "^2.6.2"
+  },
+  "peerDependencies": {
+    "plop": "^4.0.1"
+  },
+  "gitHead": "0a9112530ef16cdc6ab61ba14be585d8fb6bb16d"
+}

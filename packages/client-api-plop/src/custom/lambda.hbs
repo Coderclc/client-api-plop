@@ -1,0 +1,27 @@
+import * as api from '@/api';
+{{#each integrationApiNameArr}}
+import type { {{this}}Data } from '@/api/{{this}}';
+{{/each}}
+import { ERRORCODE, getMessage } from '@/fetch/error';
+import type { RequestOption } from '@/type';
+
+export const POST = async (
+  option: RequestOption<
+    never,
+  {{#each integrationApiNameArr}}
+    {{ this }}Data{{#unlessLast}}{{ this }}{{/unlessLast}}
+  {{/each}}
+  >,
+) => {
+  const res = await Promise.all([
+  {{#each integrationApiNameArr}}
+    api.{{this}}(option),
+  {{/each}}
+  ]);
+
+  return {
+    code: ERRORCODE.SUCCESS,
+    message: getMessage(ERRORCODE.SUCCESS),
+    data: res,
+  };
+};

@@ -1,0 +1,68 @@
+{
+  "name": "client-api-plop",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "zone",
+  "type": "module",
+  "scripts": {
+    "bootstrap": "pnpm install",
+    "build": "turbo run build",
+    "commit": "czg",
+    "postinstall": "turbo run stub",
+    "prelerna:publish": "node ./scripts/prepublish.js && pnpm build",
+    "lerna:publish": "lerna publish from-package",
+    "lerna:version": "lerna version --no-commit-hooks --no-changelog  --no-private",
+    "lint": "turbo run lint",
+    "lint:eslint": "eslint --cache --max-warnings 0  \"./**/*.{ts,tsx}\" --fix",
+    "lint:prettier": "prettier --write .",
+    "log": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "prepare": "husky install",
+    "reinstall": "rimraf pnpm-lock.yaml && rimraf package.lock.json && rimraf node_modules && pnpm bootstrap",
+    "test": "turbo run test"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "{!(package)*.json,*.code-snippets,.!(browserslist)*rc}": [
+      "prettier --write--parser json"
+    ],
+    "package.json": [
+      "prettier --write"
+    ],
+    "*.md": [
+      "prettier --write"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@zone/eslint-config": "workspace:*",
+    "@zone/ts-config": "workspace:*",
+    "conventional-changelog-cli": "^4.1.0",
+    "copyfiles": "^2.4.1",
+    "cross-env": "^7.0.3",
+    "cz-git": "^1.9.1",
+    "czg": "^1.9.1",
+    "husky": "^9.0.11",
+    "lerna": "^8.1.2",
+    "lint-staged": "15.2.2",
+    "prettier": "^3.2.5",
+    "prettier-plugin-packagejson": "^2.5.0",
+    "rimraf": "^5.0.5",
+    "turbo": "^1.13.2",
+    "typescript": "^5.4.5",
+    "unbuild": "^2.0.0"
+  },
+  "packageManager": "pnpm@9.0.6",
+  "engines": {
+    "node": ">=18.12.0",
+    "pnpm": ">=9.0.2"
+  }
+}

@@ -1,0 +1,23 @@
+import { fetch, DOMAIN } from '@/fetch';
+import type { RequestOption } from '@/type';
+
+export type {{ camelCase apiName }}Data = Record<string, any>;
+
+export type {{ camelCase apiName }}Res = Record<string, any>;
+
+export const {{ camelCase apiName }} = async ({
+  data,
+  headers,
+}: RequestOption<never, {{ camelCase apiName }}Data>) => {
+  return fetch<
+    never,
+    {{ camelCase apiName }}Data,
+    {{ camelCase apiName }}Res
+  >({
+    url: '{{ url }}',
+    domain: DOMAIN.{{ domain }},
+    data,
+    headers,
+    method: '{{ method }}',
+  });
+};
