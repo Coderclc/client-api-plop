@@ -5,7 +5,7 @@ import type { {{this}}Data } from '@/api/{{this}}';
 import { ERRORCODE, getMessage } from '@/fetch/error';
 import type { RequestOption } from '@/type';
 
-export const POST = async (
+export const {{ method }} = async (
   option: RequestOption<
     never,
   {{#each integrationApiNameArr}}
@@ -19,9 +19,19 @@ export const POST = async (
   {{/each}}
   ]);
 
-  return {
-    code: ERRORCODE.SUCCESS,
-    message: getMessage(ERRORCODE.SUCCESS),
-    data: res,
-  };
+  const find = res.find(item => item.code !== ERRORCODE.SUCCESS);
+
+  if (!find) {
+    return {
+      code: ERRORCODE.SUCCESS,
+      message: getMessage(ERRORCODE.SUCCESS),
+      data: [],
+    };
+  } else {
+    return {
+      code: find.code,
+      message: getMessage(find.code),
+      data: [],
+    };
+  }
 };
