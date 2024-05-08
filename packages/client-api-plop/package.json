@@ -1,6 +1,6 @@
 {
   "name": "client-api-plop",
-  "version": "1.0.0",
+  "version": "1.20.0",
   "license": "MIT",
   "author": "zone",
   "type": "module",
@@ -26,5 +26,5 @@
   "peerDependencies": {
     "plop": "^4.0.1"
   },
-  "gitHead": "8a6e2ae8cf2d94fb31c0e6191092c43da000d891"
+  "gitHead": "69f54d9882fcb7a534497c8c4468c482aff35032"
 }
