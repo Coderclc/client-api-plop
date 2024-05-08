@@ -1,14 +1,13 @@
 {
   "name": "client-api-plop",
-  "version": "1.17.0",
+  "version": "1.0.0",
   "license": "MIT",
   "author": "zone",
   "type": "module",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "bin": {
-    "plop": "./bin/plop.js",
-    "tsx": "./node_modules/tsx/dist/cli.mjs"
+    "plop": "./bin/plop.js"
   },
   "files": [
     "lib",
@@ -22,8 +21,7 @@
     "cross-spawn": "^7.0.3",
     "fs-extra": "^11.2.0",
     "minimist": "^1.2.8",
-    "tslib": "^2.6.2",
-    "tsx": "^4.7.3"
+    "tslib": "^2.6.2"
   },
   "peerDependencies": {
     "plop": "^4.0.1"

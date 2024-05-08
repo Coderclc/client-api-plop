@@ -1,11 +1,5 @@
-export enum LangType {
-  ZH_CN,
-  EN,
-}
-
-type LangConfig = {
-  [key in LangType]: Record<string, any>;
-};
+import { LangType } from './types';
+import type { LangConfig } from './types';
 
 const useI18n = () => {
   const lang = LangType.EN;
@@ -21,6 +15,8 @@ const useI18n = () => {
       domain: '请选择请求域名',
       integrationApiName: '请输入整合接口名称, 多个之间用空格或换行分隔',
       success: '生成成功',
+      notEmpty: '是必须的',
+      isValid: '是无效变量',
     },
     [LangType.EN]: {
       welcome: '🦖 Welcome to use client-api-plop, Please choose a generator.',
@@ -34,11 +30,13 @@ const useI18n = () => {
       integrationApiName:
         'Please enter the integration apiName, Separate multiple with spaces or line breaks',
       success: 'Successfully generated',
+      notEmpty: ' is required',
+      isValid: ' is an invalid variable',
     },
   };
   const i18n = langConfig[lang];
 
-  function setI18n(lang: LangType) {
+  function setI18n(lang: LangType = LangType.EN) {
     switch (lang) {
       case LangType.EN:
       case LangType.ZH_CN:
