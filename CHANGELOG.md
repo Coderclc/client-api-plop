@@ -1,3 +1,5 @@
+# [1.0.0](https://github.com/Coderclc/client-api-plop/compare/v1.25.0...v1.0.0) (2024-05-09)
+
 # 1.0.0 (2024-04-30)
 
 ### Features

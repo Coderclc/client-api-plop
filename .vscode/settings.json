@@ -24,7 +24,7 @@
     "CHANGELOG.md": true,
     "examples": true,
     "res": true,
-    "screenshots": true,
+    "screenshots": true
   },
   "files.exclude": {
     "**/.cache": true,
@@ -46,7 +46,7 @@
     "**/node_modules/**": true,
     "**/tmp/**": true,
     "**/bower_components/**": true,
-    "**/dist/**": true,
+    "**/dist/**": true
   },
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -64,7 +64,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit",
+    "source.fixAll.eslint": "explicit"
   },
   "cSpell.words": [
     "antd",
