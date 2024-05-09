@@ -17,11 +17,13 @@
     "build": "rimraf lib && tsc --noEmit false --outDir lib && pnpm fs-extra",
     "fs-extra": "node scripts/fs-extra.js"
   },
+  "dependencies": {
+    "plop": "^4.0.1"
+  },
   "devDependencies": {
     "cross-spawn": "^7.0.3",
     "fs-extra": "^11.2.0",
     "minimist": "^1.2.8",
-    "plop": "^4.0.1",
     "tslib": "^2.6.2"
   },
   "gitHead": "69f54d9882fcb7a534497c8c4468c482aff35032"
