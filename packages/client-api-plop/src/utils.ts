@@ -1,10 +1,10 @@
 import type { CustomActionFunction } from 'plop';
+import type { DefaultIncludeType } from './types';
+
 import fs from 'fs';
 import path from 'path';
 import { i18n } from './i18n';
-import type { DefaultIncludeType } from './types';
-
-const { spawn } = require('cross-spawn');
+import { ESLint } from 'eslint';
 
 export const notEmpty = (name: string) => (v: string) =>
   !v || v.trim() === '' ? name + i18n.notEmpty : true;
@@ -44,24 +44,22 @@ export const customAction: (
 
   return new Promise((resolve, reject) => {
     fs.readFile(config.path, 'utf8', (err, content) => {
-      if (err) {
-        reject(err);
-      }
+      if (err) reject(err);
+
       const apiName = toCamelCase(answers.apiName);
       const newContent = modifyContentFun(apiName, content);
 
-      fs.writeFile(config.path, newContent, 'utf8', (err) => {
-        if (err) {
-          reject(err);
-        }
+      fs.writeFile(config.path, newContent, 'utf8', async (err) => {
+        if (err) reject(err);
 
         // eslint
         const { eslint } = plop.getDefaultInclude() as DefaultIncludeType;
 
         if (eslint) {
-          spawn('eslint', ['--fix', '--cache', config.path]).on('close', () =>
-            resolve(i18n.success),
-          );
+          const eslint = new ESLint({ fix: true });
+          const results = await eslint.lintFiles(config.path);
+          await ESLint.outputFixes(results);
+          resolve(i18n.success);
         } else {
           resolve(i18n.success);
         }
