@@ -90,6 +90,10 @@ importers:
   internal/ts-config: {}
 
   packages/client-api-plop:
+    dependencies:
+      plop:
+        specifier: ^4.0.1
+        version: 4.0.1
     devDependencies:
       cross-spawn:
         specifier: ^7.0.3
@@ -100,9 +104,6 @@ importers:
       minimist:
         specifier: ^1.2.8
         version: 1.2.8
-      plop:
-        specifier: ^4.0.1
-        version: 4.0.1
       tslib:
         specifier: ^2.6.2
         version: 2.6.2
