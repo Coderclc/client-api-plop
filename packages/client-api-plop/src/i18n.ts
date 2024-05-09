@@ -17,6 +17,7 @@ const useI18n = () => {
       success: '生成成功',
       notEmpty: '是必须的',
       isValid: '是无效变量',
+      mustProvide: '您必须提供一个参数',
     },
     [LangType.EN]: {
       welcome: '🦖 Welcome to use client-api-plop, Please choose a generator.',
@@ -32,6 +33,7 @@ const useI18n = () => {
       success: 'Successfully generated',
       notEmpty: ' is required',
       isValid: ' is an invalid variable',
+      mustProvide: 'You must provide a parameter ',
     },
   };
   const i18n = langConfig[lang];

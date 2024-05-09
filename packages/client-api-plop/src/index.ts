@@ -1,6 +1,7 @@
 import { getCustomGenerator, getCustomLibActionType, unlessLastHelper } from './custom/prompt';
 import { getEntryGenerator, getEntryLambdaActionType, getEntryLibActionType } from './entry/prompt';
 import { i18n, setI18n } from './i18n';
+import { mustProvide } from './utils';
 
 import type { NodePlopAPI } from 'plop';
 import type { DefaultIncludeType, EntryBypassConfig, CustomBypassConfig } from './types';
@@ -41,12 +42,14 @@ const runBypass = (plop: NodePlopAPI, bypass: EntryBypassConfig | CustomBypassCo
   switch (generatorType) {
     case GeneratorType.ENTRY:
       // entry
+      mustProvide(bypass, ['module', 'apiName', 'method', 'url', 'domain']);
       plop.setGenerator('entry', getEntryGenerator(plop, bypass as EntryBypassConfig));
       plop.setActionType('entryLambda', getEntryLambdaActionType(bypass as EntryBypassConfig));
       plop.setActionType('entryLib', getEntryLibActionType(bypass as EntryBypassConfig));
       break;
     case GeneratorType.CUSTOM:
       // custom
+      mustProvide(bypass, ['module', 'apiName', 'method', 'integrationApiName']);
       plop.setGenerator('custom', getCustomGenerator(plop, bypass as CustomBypassConfig));
       plop.setActionType('customLib', getCustomLibActionType(bypass as CustomBypassConfig));
       // helper

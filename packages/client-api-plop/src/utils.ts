@@ -12,7 +12,22 @@ export const notEmpty = (name: string) => (v: string) =>
 export const isValid = (name: string) => (v: string) =>
   !/^[a-zA-Z][a-zA-Z0-9_/-]*$/.test(v) ? name + i18n.isValid : true;
 
+export const mustProvide = (payload: Record<string, any>, parameter: string | string[]) => {
+  if (!Array.isArray(parameter)) {
+    parameter = [parameter];
+  }
+
+  parameter.forEach((key) => {
+    if (!payload[key]) {
+      throw new Error(i18n.mustProvide + key);
+    }
+  });
+
+  return payload;
+};
+
 export const getPath = (_path: string) => path.join(process.cwd(), _path);
+
 export const getTemplateFile = (_path: string) => path.join(__dirname, _path);
 
 export const toCamelCase = (str: string = '') =>
