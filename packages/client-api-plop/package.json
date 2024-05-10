@@ -18,8 +18,7 @@
     "fs-extra": "node scripts/fs-extra.js"
   },
   "dependencies": {
-    "plop": "^4.0.1",
-    "tsx": "^4.9.3"
+    "plop": "^4.0.1"
   },
   "devDependencies": {
     "@types/eslint": "^8.56.10",
