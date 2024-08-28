@@ -36,6 +36,7 @@ type BypassConfig = {
 type EntryBypassConfig = BypassConfig & {
   url: string;
   domain: string;
+  apiModule?: string;
 };
 
 type CustomBypassConfig = BypassConfig & {

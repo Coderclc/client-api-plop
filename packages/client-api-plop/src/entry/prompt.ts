@@ -51,18 +51,19 @@ export const getEntryGenerator = (
       const data = (bypass || prompt)!;
       data.apiName = toCamelCase(data.apiName);
       const { module, apiName } = data;
+      const apiModule = data.apiModule ? data.apiModule + '/' : '';
 
       return [
         {
           type: 'add',
-          path: getPath(`api/api/${apiName}.ts`),
+          path: getPath(`api/api/${apiModule}${apiName}.ts`),
           templateFile: getTemplateFile('entry/api.hbs'),
           data,
         },
         {
           type: 'append',
           path: getPath('api/api/index.ts'),
-          template: `export * from './${apiName}';`,
+          template: `export * from './${apiModule}${apiName}';`,
         },
         {
           type: 'entryLambda',
@@ -85,9 +86,10 @@ export const getEntryLambdaActionType: (bypass?: EntryBypassConfig) => CustomAct
         apiName = bypass?.apiName || apiName;
 
         let newContent = '';
+        const apiModule = bypass?.apiModule ? bypass?.apiModule + '/' : '';
 
         const importMatchReg = /import \* as api from '@\/api';/;
-        const importContent = `import type { ${apiName}Data, ${apiName}Res } from '@/api/${apiName}';`;
+        const importContent = `import type { ${apiName}Data, ${apiName}Res } from '@/api/${apiModule}${apiName}';`;
         newContent = content.replace(importMatchReg, (match) => `${match}\n${importContent}`);
 
         // add apiMap
@@ -116,10 +118,11 @@ export const getEntryLibActionType: (bypass?: EntryBypassConfig) => CustomAction
         apiName = bypass?.apiName || apiName;
 
         let newContent = '';
+        const apiModule = bypass?.apiModule ? bypass?.apiModule + '/' : '';
 
         // add import type
         const importMatchReg = /import { ApiRes } from '@pakwoon\/mysql-utils';/;
-        const importContent = `import type { ${apiName}Data, ${apiName}Res } from '@/api/${apiName}';`;
+        const importContent = `import type { ${apiName}Data, ${apiName}Res } from '@/api/${apiModule}${apiName}';`;
         newContent = content.replace(importMatchReg, (match) => `${match}\n${importContent}`);
 
         // add entryIndex
@@ -131,7 +134,7 @@ export const getEntryLibActionType: (bypass?: EntryBypassConfig) => CustomAction
         );
 
         // add export type
-        const exportContent = `export type { ${apiName}Data, ${apiName}Res } from '@/api/${apiName}';`;
+        const exportContent = `export type { ${apiName}Data, ${apiName}Res } from '@/api/${apiModule}${apiName}';`;
         newContent += `${exportContent}\n`;
 
         return newContent;
